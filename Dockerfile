@@ -5,6 +5,9 @@ FROM alpine:3.12
 LABEL maintainer="nigelpoulton@hotmail.com"
 
 # Install Node and NPM
+
+RUN sed -i -e 's/http:/https:/' /etc/apk/repositories
+
 RUN apk add --update --no-cache \
         curl \
         nodejs \
